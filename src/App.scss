@@ -1,6 +1,6 @@
-@import "./styles/reset.scss";
-@import "./styles/colors.scss";
-@import "./styles/fonts.scss";
+@import "./styles/settings/colors.scss";
+@import "./styles/settings/fonts.scss";
+@import "./styles/settings/reset.scss";
 
 #root {
   max-width: 1280px;
