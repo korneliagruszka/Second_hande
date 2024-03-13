@@ -1,0 +1,46 @@
+@import "src/styles/settings/colors.scss";
+
+.top_menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: $color-white;
+  margin-right: 142px;
+  width: 683px;
+  margin-top: 37px;
+  margin-left: 900px;
+}
+
+.account_contact_container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+
+  a {
+    font-size: 14px;
+    color: $color-text-light-grey;
+    padding: 5px;
+  }
+}
+
+.account_link {
+  border: 0.75px solid $color-yellow;
+}
+
+.login_link,
+.account_link {
+  color: $color-text-light-grey;
+  text-decoration: none;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 40px;
+
+  a {
+    font-size: 18px;
+    color: $color-text-dark-grey;
+  }
+}
