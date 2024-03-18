@@ -1,0 +1,76 @@
+@import "src/styles/settings/colors.scss";
+
+.simple_steps {
+  width: 1900px;
+  height: 624px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $color-white;
+  justify-content: center;
+
+  h2 {
+    font-size: 38px;
+    font-weight: 400;
+    color: $color-text-dark-grey;
+    margin-right: 335px;
+    margin-top: 150px;
+  }
+  img {
+    margin-right: 390px;
+    margin-bottom: 40px;
+  }
+}
+
+.four_columns {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f0f1f1;
+  padding: 32px;
+  margin-right: 330px;
+
+  h4 {
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 16px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      bottom: -8px;
+      height: 1px;
+      background-color: $color-grey;
+    }
+  }
+}
+
+img {
+  display: flex;
+  margin-left: 55px;
+}
+
+.first_icon,
+.second_icon,
+.third_icon,
+.fourth_icon {
+  width: 197px;
+  padding: 32px;
+}
+
+.simple_button {
+  width: 270px;
+  height: 120px;
+  background-color: $color-white;
+  color: $color-text-dark-grey;
+  border: 0.75px solid $color-text-dark-grey;
+  padding: 10px 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 345px;
+  font-size: 36px;
+  font: normal normal 300 36px/45px Open Sans;
+}
