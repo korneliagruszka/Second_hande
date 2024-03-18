@@ -1,0 +1,32 @@
+@import "src/styles/settings/colors.scss";
+
+.three_columns {
+  width: 1900px;
+  background-image: url(../../../assets/3_Columns_Background.png);
+  margin-top: 5px;
+  margin-left: -10px;
+  display: flex;
+}
+
+.first_column,
+.second_column,
+.third_column {
+  width: 30%;
+  margin-right: -50px;
+  margin-left: -5px;
+}
+
+.number {
+  font-size: 90px;
+  margin-bottom: -10px;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.text {
+  font-size: 16px;
+  padding: 10px 72px;
+  margin-bottom: 70px;
+}

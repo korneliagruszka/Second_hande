@@ -3,6 +3,7 @@ import './App.scss';
 // import Contact from "./components/common/Contact/contact";
 import TopMenu from "./components/common/TopMenu/topMenu";
 import HomeHeader from "./components/Home/HomeHeader/homeHeader";
+import Statistics from "./components/Home/Statistics/statistics";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             element={
               <>
                 <HomeHeader />
+                <Statistics />
               </>
             }
           />
