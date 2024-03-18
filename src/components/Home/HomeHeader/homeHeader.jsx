@@ -13,6 +13,9 @@ function HomeHeader() {
                 <span>Oddaj niechciane rzeczy w zaufane ręce</span>
             </p>
             <img src={secondImage} alt="Decoration image" className="decoration_image"/>
+            
+            </div>
+            <div className="intro_buttons">
             <button>ODDAJ RZECZY</button>
             <button>ZORGANIZUJ ZBIÓRKĘ</button>
             </div>

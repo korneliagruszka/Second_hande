@@ -11,10 +11,9 @@
 
   .hero_image {
     margin-top: -90px;
-    margin-left: -483px;
+    margin-left: -690px;
     width: 1368px;
     height: 963px;
-    object-fit: cover;
   }
 
   .intro {
@@ -29,7 +28,7 @@
       font: normal normal normal 38px/55px Open Sans;
       margin-top: 200px;
       font-size: 38px;
-      width: 674px;
+      width: 702px;
       height: 107px;
       margin-right: 600px;
       color: $color-text-dark-grey;
@@ -47,9 +46,20 @@
     img {
       margin-bottom: 20px;
     }
+  }
+
+  .intro_buttons {
+    background-color: $color-white;
+    color: $color-text-dark-grey;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 36px;
+    display: inline-flex;
+    margin-left: -935px;
+    margin-top: 500px;
 
     button {
-      width: 310px;
+      width: 270px;
       height: 120px;
       background-color: $color-white;
       color: $color-text-dark-grey;
@@ -57,9 +67,6 @@
       padding: 10px 20px;
       margin: 5px;
       font-size: 36px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       font: normal normal 300 36px/45px Open Sans;
     }
   }
