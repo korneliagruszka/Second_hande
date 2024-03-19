@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.scss';
-// import Contact from "./components/common/Contact/contact";
 import TopMenu from "./components/common/TopMenu/topMenu";
 import HomeHeader from "./components/Home/HomeHeader/homeHeader";
 import Statistics from "./components/Home/Statistics/statistics";
 import SimpleSteps from "./components/Home/SimpleSteps/simpleSteps";
 import AboutUs from "./components/Home/AboutUs/aboutUs";
+import Contact from "./components/common/Contact/contact";
+import Foundations from "./components/Home/Foundations/foundations";
 
 function App() {
   return (
@@ -22,11 +23,12 @@ function App() {
                 <Statistics />
                 <SimpleSteps />
                 <AboutUs />
+                <Foundations />
               </>
             }
           />
         </Routes>
-        {/* <Contact /> */}
+        <Contact />
       </div>
     </BrowserRouter>
   )
