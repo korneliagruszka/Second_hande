@@ -1,7 +1,7 @@
 @import "src/styles/settings/colors.scss";
 
 .three_columns {
-  width: 1900px;
+  width: 1586px;
   background-image: url(../../../assets/3_Columns_Background.png);
   margin-top: 5px;
   margin-left: -10px;
@@ -12,8 +12,8 @@
 .second_column,
 .third_column {
   width: 30%;
-  margin-right: -50px;
-  margin-left: -5px;
+  margin-right: 55px;
+  margin-left: 25px;
 }
 
 .number {
@@ -27,6 +27,6 @@
 
 .text {
   font-size: 16px;
-  padding: 10px 72px;
+  padding: 10px 11px;
   margin-bottom: 70px;
 }
