@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "../SimpleSteps/simpleSteps.scss";
 import secondImage from "../../../assets/Decoration.png";
 import icon1Image from "../../../assets/Icon_1.png";
@@ -6,8 +7,14 @@ import icon3Image from "../../../assets/Icon_3.png";
 import icon4Image from "../../../assets/Icon_4.png";
 
 function SimpleSteps() {
+  let navigate = useNavigate();
+
+    const handleDonateClick = () => {
+        navigate("/login"); 
+    };
+
   return (
-    <div className="simple_steps">
+    <div className="simple_steps" id="simple_steps">
       <h2>Wystarczą 4 proste kroki</h2>
       <img
         src={secondImage}
@@ -36,7 +43,7 @@ function SimpleSteps() {
           <p>kurier przyjedzie w dogodnym terminie</p>
         </div>
       </div>
-      <button className="simple_button">ODDAJ RZECZY</button>
+      <button onClick={handleDonateClick} className="simple_button">ODDAJ RZECZY</button>
     </div>
   );
 }

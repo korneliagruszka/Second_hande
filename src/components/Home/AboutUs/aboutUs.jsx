@@ -5,7 +5,7 @@ import peopleImage from "../../../assets/People.png";
 
 function AboutUs(){
     return(
-    <div className="about_us">
+    <div className="about_us" id="about_us">
      <div className="about_us_info">
       <h2>O nas</h2>
       <img src={secondImage} alt="Decoration image" className="about_us_image"/>
