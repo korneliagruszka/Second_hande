@@ -5,6 +5,7 @@ import TopMenu from "./components/common/TopMenu/topMenu";
 import HomeHeader from "./components/Home/HomeHeader/homeHeader";
 import Statistics from "./components/Home/Statistics/statistics";
 import SimpleSteps from "./components/Home/SimpleSteps/simpleSteps";
+import AboutUs from "./components/Home/AboutUs/aboutUs";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <HomeHeader />
                 <Statistics />
                 <SimpleSteps />
+                <AboutUs />
               </>
             }
           />
