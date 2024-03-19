@@ -1,0 +1,50 @@
+@import "src/styles/settings/colors.scss";
+
+.about_us {
+  width: 1585px;
+  height: 820px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: -8px;
+
+  .about_us_info,
+  .people_image {
+    width: 50%;
+    height: 567px;
+    background-color: #f0f1f1;
+  }
+
+  .about_us_image,
+  .signature_image,
+  .people_image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .people_image {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 38px;
+    color: $color-text-dark-grey;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 30px;
+    color: $color-text-dark-grey;
+    font-weight: 400;
+    padding: 0 60px;
+  }
+
+  .about_us_image {
+    margin-left: 270px;
+  }
+
+  .signature_image {
+    margin-left: 520px;
+  }
+}
