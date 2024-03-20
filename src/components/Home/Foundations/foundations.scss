@@ -1,1 +1,111 @@
 @import "src/styles/settings/colors.scss";
+
+.foundations {
+  width: 1575px;
+  height: 624px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $color-white;
+  justify-content: center;
+
+  h2 {
+    font-size: 38px;
+    font-weight: 400;
+    color: $color-text-dark-grey;
+  }
+
+  img {
+    margin-right: 70px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    color: $color-text-dark-grey;
+    max-width: 640px;
+  }
+}
+
+.foundations_text, .organizations_text, .collections_text {
+  font-size: 22px;
+  margin-left: 285px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.foundations_buttons {
+  background-color: $color-white;
+  color: $color-text-dark-grey;
+  padding: 10px 20px;
+  margin: 5px;
+  display: inline-flex;
+  margin-left: -15px;
+  font-size: 24px;
+
+  button {
+    width: 208px;
+    height: 79px;
+    background-color: $color-white;
+    color: $color-text-dark-grey;
+    padding: 5px 20px;
+    margin: 0 50px;
+    font: normal normal 300 24px Open Sans;
+    font-weight: 400;
+
+    &:hover {
+      border: 0.75px solid $color-text-dark-grey;
+    }
+  }
+}
+
+.three_rows {
+  width: 1230px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.first_row,
+.second_row,
+.third_row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #f0f1f1;
+}
+
+.third_row {
+  border-bottom: none;
+}
+
+.left_column,
+.right_column {
+  padding: 0 10px;
+}
+
+.left_column {
+  text-align: left;
+  flex-basis: 50%;
+}
+
+.right_column {
+  text-align: right;
+  flex-basis: 50%;
+}
+
+.row_title {
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0 0 -10px 0;
+}
+
+p {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.first_row,
+.second_row,
+.third_row {
+  min-height: 80px;
+}
