@@ -6,7 +6,7 @@ import Statistics from "./components/Home/Statistics/statistics";
 import SimpleSteps from "./components/Home/SimpleSteps/simpleSteps";
 import AboutUs from "./components/Home/AboutUs/aboutUs";
 import Contact from "./components/common/Contact/contact";
-import Foundations from "./components/Home/Foundations/foundations";
+import Fundations from "./components/Home/Fundations/fundations";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
                 <Statistics />
                 <SimpleSteps />
                 <AboutUs />
-                <Foundations />
+                <Fundations />
               </>
             }
           />
