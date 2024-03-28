@@ -70,12 +70,15 @@
 .submit_button {
   width: 100px;
   align-self: flex-end;
+  margin-left: 372px;
+  border: 1px solid #3c3c3c26;
 }
 
 input,
 textarea {
   padding: 10px;
   font-size: 16px;
+  border: 0;
 }
 
 footer {
@@ -104,4 +107,13 @@ footer {
   margin-left: 1300px;
   margin-top: -330px;
   position: absolute;
+}
+
+#firstName,
+#email,
+#message {
+  font: normal normal normal 18px Open Sans;
+  border-bottom: 2px solid #3c3c3c26;
+  margin-right: 15px;
+  color: $color-text-dark-grey;
 }

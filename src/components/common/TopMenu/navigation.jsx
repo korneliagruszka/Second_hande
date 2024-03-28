@@ -13,7 +13,7 @@ function Navigation(){
         <Link to="about_us" smooth={true} duration={500}>
           O nas
         </Link>
-        <Link to="foundations" smooth={true} duration={500}>
+        <Link to="fundations" smooth={true} duration={500}>
           Fundacja i organizacje
         </Link>
         <Link

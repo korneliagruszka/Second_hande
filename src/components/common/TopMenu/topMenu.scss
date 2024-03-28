@@ -23,8 +23,16 @@
   }
 }
 
+.login_link:hover {
+  background-color: $color-creamy;
+}
+
 .account_link {
   border: 0.75px solid $color-yellow;
+}
+
+.account_link:hover {
+  background-color: #fbfbef;
 }
 
 .login_link,
@@ -38,9 +46,16 @@
   flex-direction: row;
   justify-content: flex-end;
   gap: 40px;
+  cursor: pointer;
 
   a {
     font-size: 18px;
     color: $color-text-dark-grey;
+    padding: 7px;
   }
+}
+
+.navigation a:hover {
+  background-color: $color-creamy;
+  padding: 7px;
 }
