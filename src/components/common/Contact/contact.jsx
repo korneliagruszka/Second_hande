@@ -11,6 +11,48 @@ function Contact() {
     message: "",
   });
 
+  const [errors, setErrors] = useState({
+    firstName: "",
+    email: "",
+    message: "",
+  });
+
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const validateForm = () => {
+    let formIsValid = true;
+    let errors = {};
+
+    if (!formData.firstName.trim() || formData.firstName.indexOf(' ') >= 0) {
+      errors.firstName = "Podane imię jest nieprawidłowe!";
+      formIsValid = false;
+    }
+
+    if (!validateEmail(formData.email)) {
+      errors.email = "Podany email jest nieprawidłowy!";
+      formIsValid = false;
+    }
+
+    if (formData.message.length < 120) {
+      errors.message = "Wiadomość musi mieć conajmniej 120 znaków!";
+      formIsValid = false;
+    }
+
+    setErrors(errors);
+    return formIsValid;
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      // Tutaj logika wysyłania formularza, jeśli walidacja przebiegła pomyślnie
+      console.log("Formularz wysłany.");
+    }
+  };
+
   const [placeholder, setPlaceholder] = useState({
     firstName: "Wpisz swoje imię",
     email: "Wpisz swój email",
@@ -57,7 +99,7 @@ function Contact() {
     <div className="contact" id="contact">
       <h2>Skontaktuj się z nami</h2>
       <img src={secondImage} alt="Decoration" className="contact_decoration_image" />
-      <form className="contact_form">
+      <form className="contact_form" onSubmit={handleFormSubmit}>
         <div className="input-row">
           <input
             type="text"
@@ -91,6 +133,11 @@ function Contact() {
             onChange={handleInputChange}
           ></textarea>
         </div>
+        {Object.values(errors).some(error => error) && (
+          <div className="errors">
+            {Object.keys(errors).map(key => errors[key] && <p key={key}>{errors[key]}</p>)}
+          </div>
+        )}
         <div className="input-row">
           <button type="submit" className="submit_button">
             Wyślij
