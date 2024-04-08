@@ -51,18 +51,21 @@
   margin-bottom: 700px;
 }
 
-.input-row {
+.input_row_group {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  width: 100%;
 }
 
-.input-row:first-child input {
+.input-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
   width: 48%;
 }
 
 #message {
-  width: 100%;
+  width: 200%;
   height: 150px;
   resize: none;
 }
@@ -87,7 +90,7 @@ footer {
 
 .copyright {
   z-index: 2;
-  margin-top: -325px;
+  margin-top: -355px;
   margin-left: 730px;
   position: absolute;
   font-size: 18px;
@@ -97,7 +100,7 @@ footer {
   width: 30px;
   height: 30px;
   margin-left: 1260px;
-  margin-top: -330px;
+  margin-top: -355px;
   position: absolute;
 }
 
@@ -105,7 +108,7 @@ footer {
   width: 30px;
   height: 30px;
   margin-left: 1300px;
-  margin-top: -330px;
+  margin-top: -355px;
   position: absolute;
 }
 
@@ -118,7 +121,11 @@ footer {
   color: $color-text-dark-grey;
 }
 
-.errors p {
+.name_error, .surname_error, .text_error {
   color: red;
   font-size: 10px;
+}
+
+.name_error, .surname_error {
+  margin-left: -75px;
 }
