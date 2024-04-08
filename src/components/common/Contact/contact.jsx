@@ -17,6 +17,12 @@ function Contact() {
     message: "",
   });
 
+  const [placeholder, setPlaceholder] = useState({
+    firstName: "Wpisz swoje imię",
+    email: "Wpisz swój email",
+    message: "Wpisz swoją wiadomość",
+  });
+
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -53,11 +59,7 @@ function Contact() {
     }
   };
 
-  const [placeholder, setPlaceholder] = useState({
-    firstName: "Wpisz swoje imię",
-    email: "Wpisz swój email",
-    message: "Wpisz swoją wiadomość",
-  });
+  
 
   const handleFocus = (field) => {
     const placeholders = {
@@ -100,6 +102,7 @@ function Contact() {
       <h2>Skontaktuj się z nami</h2>
       <img src={secondImage} alt="Decoration" className="contact_decoration_image" />
       <form className="contact_form" onSubmit={handleFormSubmit}>
+      <div className="input_row_group">
         <div className="input-row">
           <input
             type="text"
@@ -110,7 +113,9 @@ function Contact() {
             onBlur={() => handleBlur("firstName")}
             value={formData.firstName}
             onChange={handleInputChange}
-          />
+          />{errors.firstName && <p className="name_error">{errors.firstName}</p>}
+          </div>
+          <div className="input-row">
           <input
             type="email"
             id="email"
@@ -120,7 +125,8 @@ function Contact() {
             onBlur={() => handleBlur("email")}
             value={formData.email}
             onChange={handleInputChange}
-          />
+          />{errors.email && <p className="surname_error">{errors.email}</p>}
+        </div>
         </div>
         <div className="input-row">
           <textarea
@@ -131,18 +137,11 @@ function Contact() {
             onBlur={() => handleBlur("message")}
             value={formData.message}
             onChange={handleInputChange}
-          ></textarea>
+          ></textarea>{errors.message && <p className="text_error">{errors.message}</p>}
         </div>
-        {Object.values(errors).some(error => error) && (
-          <div className="errors">
-            {Object.keys(errors).map(key => errors[key] && <p key={key}>{errors[key]}</p>)}
-          </div>
-        )}
-        <div className="input-row">
           <button type="submit" className="submit_button">
             Wyślij
           </button>
-        </div>
       </form>
       <footer>
         <p className="copyright">Copyright by Coders Lab</p>
