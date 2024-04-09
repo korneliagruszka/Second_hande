@@ -17,6 +17,8 @@ function Contact() {
     message: "",
   });
 
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   const [placeholder, setPlaceholder] = useState({
     firstName: "Wpisz swoje imię",
     email: "Wpisz swój email",
@@ -51,15 +53,54 @@ function Contact() {
     return formIsValid;
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
       // Tutaj logika wysyłania formularza, jeśli walidacja przebiegła pomyślnie
+      const formDataToSend = {
+        name: formData.firstName,
+        email: formData.email,
+        message: formData.message,
+      };
+  
+      try {
+        const response = await fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formDataToSend),
+        });
+  
+        if (!response.ok) {
+          const errorData = await response.json();
+          console.error('Błąd:', errorData);
+
+          if(errorData.errors) {
+            const updatedErrors = {};
+            errorData.errors.forEach(error => {
+              updatedErrors[error.param] = error.msg;
+            });
+            setErrors(prevErrors => ({
+              ...prevErrors,
+              ...updatedErrors
+            }));
+          }
+        } else {
+          // Sukces, dane formularza zostały prawidłowo przesłane
+          const data = await response.json();
+          console.log('Formularz wysłany:', data);
+      
+          setFormData({ firstName: "", email: "", message: "" }); // Wyczyszczenie formularza
+          setErrors({ firstName: "", email: "", message: "" }); // Reset błędów
+          setFormSubmitted(true); // Ustawienie stanu formularza na 'wysłany'
+        }
+      } catch (error) {
+        console.error('Wystąpił błąd:', error);
+      }
       console.log("Formularz wysłany.");
     }
   };
-
-  
 
   const handleFocus = (field) => {
     const placeholders = {
@@ -101,6 +142,9 @@ function Contact() {
     <div className="contact" id="contact">
       <h2>Skontaktuj się z nami</h2>
       <img src={secondImage} alt="Decoration" className="contact_decoration_image" />
+      {formSubmitted && (
+      <p className="correct_form">Wiadomość została wysłana! Wkrótce się skontaktujemy.</p>
+    )}
       <form className="contact_form" onSubmit={handleFormSubmit}>
       <div className="input_row_group">
         <div className="input-row">
