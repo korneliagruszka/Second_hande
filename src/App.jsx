@@ -7,6 +7,7 @@ import SimpleSteps from "./components/Home/SimpleSteps/simpleSteps";
 import AboutUs from "./components/Home/AboutUs/aboutUs";
 import Contact from "./components/common/Contact/contact";
 import Fundations from "./components/Home/Fundations/fundations";
+import Login from "./components/Home/Login/login";
 
 function App() {
   return (
@@ -24,11 +25,13 @@ function App() {
                 <SimpleSteps />
                 <AboutUs />
                 <Fundations />
+                <Contact />
               </>
             }
           />
+          <Route path="/login" element={<Login />} />
         </Routes>
-        <Contact />
+        
       </div>
     </BrowserRouter>
   )
