@@ -3,21 +3,69 @@
 .login {
     position: relative;
     width: 1585px;
-    height: 1026px;
+    height: 450px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    overflow: hidden;
   
     h2 {
       font-size: 38px;
       font-weight: 400;
       color: $color-text-dark-grey;
+      margin-top: 200px;
     }
   }
   
   .login_decoration_image {
-    margin-left: 695px;
-    margin-bottom: 40px;
+    margin-left: 5px;
+    margin-bottom: 20px;
   }
+
+  .form_inputs {
+    width: 385px;
+    height: 235px;
+    background: #F0F1F1 0% 0% no-repeat padding-box;
+  }
+
+  .form_inputs label {
+    display: block;
+    margin-bottom: 5px;
+    color: $color-text-dark-grey;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 70px;
+    padding-top: 20px;
+}
+
+.form_inputs input {
+    margin-bottom: 20px;
+}
+
+.form_buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    margin-top: 50px;
+}
+
+.register_button, .login_button {
+  background-color: $color-white;
+}
+
+.register_button {
+    flex-grow: 1;
+    margin-right: 265px;
+}
+
+.login_button {
+    flex-grow: 1;
+}
+
+#password, .email {
+  font: normal normal normal 18px Open Sans;
+  border-bottom: 2px solid #3c3c3c26;
+  margin-right: 15px;
+  color: $color-text-dark-grey;
+  background: #F0F1F1 0% 0% no-repeat padding-box;
+}
