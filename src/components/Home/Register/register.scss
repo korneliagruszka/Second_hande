@@ -1,0 +1,74 @@
+@import "src/styles/settings/colors.scss";
+
+.register {
+    position: relative;
+    width: 1585px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  
+    h2 {
+      font-size: 38px;
+      font-weight: 400;
+      color: $color-text-dark-grey;
+      margin-top: 200px;
+    }
+  }
+  
+  .register_decoration_image {
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+
+  .register_inputs {
+    width: 385px;
+    height: 328px;
+    background: #F0F1F1 0% 0% no-repeat padding-box;
+    margin-left: 75px;
+  }
+
+  .register_inputs label {
+    display: block;
+    margin-bottom: -5px;
+    color: $color-text-dark-grey;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 70px;
+    padding-top: 20px;
+}
+
+.register_inputs input {
+    margin-bottom: 20px;
+}
+
+.form_buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    margin-top: 50px;
+}
+
+.register_button, .login_button {
+  background-color: $color-white;
+}
+
+.register_button {
+    flex-grow: 1;
+    margin-right: 265px;
+}
+
+.login_button {
+    flex-grow: 1;
+}
+
+#password, .email, #repeatPassword {
+  font: normal normal normal 18px Open Sans;
+  border-bottom: 2px solid #3c3c3c26;
+  margin-right: 15px;
+  color: $color-text-dark-grey;
+  background: #F0F1F1 0% 0% no-repeat padding-box;
+  width: 235px;
+  margin-left: 20px;
+}

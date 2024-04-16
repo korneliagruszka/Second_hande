@@ -8,6 +8,7 @@ import AboutUs from "./components/Home/AboutUs/aboutUs";
 import Contact from "./components/common/Contact/contact";
 import Fundations from "./components/Home/Fundations/fundations";
 import Login from "./components/Home/Login/login";
+import Register from "./components/Home/Register/register";
 
 function App() {
   return (
@@ -30,11 +31,11 @@ function App() {
             }
           />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
-        
       </div>
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;
