@@ -1,6 +1,7 @@
 import "../Login/login.scss";
 import secondImage from "../../../assets/Decoration.png";
 import { useState } from 'react';
+import { Link } from "react-router-dom"
 
 function Login(){
     const [email, setEmail] = useState('');
@@ -66,7 +67,8 @@ function Login(){
                 </div>
             
               <div className="form_buttons">
-                <button type="button" className="register_button">Załóż konto</button>
+              <Link to="/register">
+                <button type="button" className="register_button">Załóż konto</button></Link>
                 <button type="submit" className="login_button">Zaloguj się</button>
               </div>
             </form>
