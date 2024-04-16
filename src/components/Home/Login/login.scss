@@ -26,6 +26,7 @@
     width: 385px;
     height: 235px;
     background: #F0F1F1 0% 0% no-repeat padding-box;
+    margin-left: 75px;
   }
 
   .form_inputs label {
@@ -68,4 +69,16 @@
   margin-right: 15px;
   color: $color-text-dark-grey;
   background: #F0F1F1 0% 0% no-repeat padding-box;
+}
+
+.login_errors1, .login_errors2 {
+  min-height: 18px;
+  font-size: 10px;
+  color: red;
+  margin-top: -18px;
+  margin-right: 86px;
+}
+
+.login_errors2 {
+  margin-right: 105px;
 }

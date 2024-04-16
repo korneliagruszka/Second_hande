@@ -157,6 +157,9 @@ function Contact() {
             onBlur={() => handleBlur("firstName")}
             value={formData.firstName}
             onChange={handleInputChange}
+            style={{
+              borderBottom: errors.email ? '2px solid red' : '2px solid #3c3c3c26'
+          }}
           />{errors.firstName && <p className="name_error">{errors.firstName}</p>}
           </div>
           <div className="input-row">
@@ -169,6 +172,9 @@ function Contact() {
             onBlur={() => handleBlur("email")}
             value={formData.email}
             onChange={handleInputChange}
+            style={{
+              borderBottom: errors.email ? '2px solid red' : '2px solid #3c3c3c26'
+          }}
           />{errors.email && <p className="surname_error">{errors.email}</p>}
         </div>
         </div>
@@ -181,6 +187,9 @@ function Contact() {
             onBlur={() => handleBlur("message")}
             value={formData.message}
             onChange={handleInputChange}
+            style={{
+              borderBottom: errors.email ? '2px solid red' : '2px solid #3c3c3c26'
+          }}
           ></textarea>{errors.message && <p className="text_error">{errors.message}</p>}
         </div>
           <button type="submit" className="submit_button">
