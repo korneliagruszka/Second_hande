@@ -51,7 +51,7 @@ function Login(){
                         borderBottom: errors.email ? '2px solid red' : '2px solid #3c3c3c26'
                     }}
                 />
-                {errors.email && <div className="login_errors1">{errors.email}</div>}
+                {errors.email && <div className="login_error1">{errors.email}</div>}
                 <label htmlFor="password">Hasło</label>
                 <input
                     type="password"
@@ -63,7 +63,7 @@ function Login(){
                         borderBottom: errors.password ? '2px solid red' : '2px solid #3c3c3c26'
                     }}
                 />
-                {errors.password && <div className="login_errors2">{errors.password}</div>}
+                {errors.password && <div className="login_error2">{errors.password}</div>}
                 </div>
             
               <div className="form_buttons">

@@ -72,3 +72,19 @@
   width: 235px;
   margin-left: 20px;
 }
+
+.register_error1, .register_error2, .register_error3 {
+  min-height: 18px;
+  font-size: 10px;
+  color: red;
+  margin-top: -18px;
+  margin-right: 86px;
+}
+
+.register_error2 {
+  margin-right: 105px;
+}
+
+.register_error3 {
+  margin-left: 85px;
+}
