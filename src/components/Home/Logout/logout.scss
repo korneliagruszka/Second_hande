@@ -1,0 +1,31 @@
+@import "src/styles/settings/colors.scss";
+
+.logout {
+    position: relative;
+    width: 1585px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  
+    h2 {
+      width: 600px;
+      font-size: 38px;
+      font-weight: 400;
+      color: $color-text-dark-grey;
+      margin-top: 200px;
+    }
+  }
+  
+  .logout_decoration_image {
+    margin-left: 5px;
+    margin-bottom: 20px;
+  }
+
+  .logout_button {
+    padding: 10px 16px;
+    background-color: $color-white;
+    margin-top: 50px;
+    border: 0.75px solid $color-text-dark-grey;
+  }
