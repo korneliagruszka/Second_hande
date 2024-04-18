@@ -9,6 +9,7 @@ import Contact from "./components/common/Contact/contact";
 import Fundations from "./components/Home/Fundations/fundations";
 import Login from "./components/Home/Login/login";
 import Register from "./components/Home/Register/register";
+import Logout from "./components/Home/Logout/logout";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </div>
     </BrowserRouter>
