@@ -1,7 +1,8 @@
 import "../Login/login.scss";
 import secondImage from "../../../assets/Decoration.png";
 import { useState } from 'react';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import supabase from '../../../supabaseClient';
 
 function Login(){
     const [email, setEmail] = useState('');
@@ -12,7 +13,7 @@ function Login(){
         return /\S+@\S+\.\S+/.test(email);
     };
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         let valid = true;
         let errors = { email: '', password: '' };
@@ -29,8 +30,17 @@ function Login(){
 
         setErrors(errors);
         if (valid) {
-            // W tym miejscu można by przeprowadzić logowanie
-            console.log("Logowanie...");
+            const { user, error } = await supabase.auth.signIn({
+                email: email,
+                password: password
+            });
+    
+            if (error) {
+                console.error('Błąd logowania:', error.message);
+                setErrors(prevErrors => ({ ...prevErrors, form: 'Błąd logowania: ' + error.message }));
+            } else {
+                console.log('Zalogowano jako:', user.email);
+            }
         }
     };
 

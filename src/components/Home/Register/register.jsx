@@ -2,6 +2,7 @@ import "../Register/register.scss";
 import secondImage from "../../../assets/Decoration.png";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
+import supabase from '../../../supabaseClient';
 
 function Register(){
     const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ function Register(){
         return /\S+@\S+\.\S+/.test(email);
     };
 
-    const handleLogin = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
         let valid = true;
         let errors = { email: '', password: '', repeatPassword: '' };
@@ -40,15 +41,26 @@ function Register(){
 
         setErrors(errors);
         if (valid) {
-            // W tym miejscu można by przeprowadzić logowanie
-            console.log("Logowanie...");
+            const { user, error } = await supabase.auth.signUp({
+                email: email,
+                password: password
+            });
+    
+            if (error) {
+                console.error('Błąd rejestracji:', error.message);
+                setErrors(prevErrors => ({ ...prevErrors, form: 'Błąd rejestracji: ' + error.message }));
+            } else {
+                console.log('Rejestracja pomyślna, użytkownik:', user);
+                // Tutaj przekierowanie użytkownika do login
+            }
         }
+        
     };
     return (
         <div className="register">
             <h2>Załóż konto</h2>
             <img src={secondImage} alt="Decoration" className="register_decoration_image" />
-            <form className="register_form" onSubmit={handleLogin}>
+            <form className="register_form" onSubmit={handleRegister}>
                 <div className="register_inputs">
                     <label htmlFor="email">Email</label>
                     <input
