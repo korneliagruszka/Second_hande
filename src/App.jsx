@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { createClient } from '@supabase/supabase-js';
 import './App.scss';
 import TopMenu from "./components/common/TopMenu/topMenu";
 import HomeHeader from "./components/Home/HomeHeader/homeHeader";
