@@ -3,11 +3,13 @@ import secondImage from "../../../assets/Decoration.png";
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import supabase from '../../../supabaseClient';
+import { useNavigate } from 'react-router-dom';
 
 function Login(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({ email: '', password: '' });
+    const navigate = useNavigate();
 
     const validateEmail = (email) => {
         return /\S+@\S+\.\S+/.test(email);
@@ -38,8 +40,9 @@ function Login(){
             if (error) {
                 console.error('Błąd logowania:', error.message);
                 setErrors(prevErrors => ({ ...prevErrors, form: 'Błąd logowania: ' + error.message }));
-            } else {
+            } else if (user) {
                 console.log('Zalogowano jako:', user.email);
+                navigate('/dashboard');
             }
         }
     };
