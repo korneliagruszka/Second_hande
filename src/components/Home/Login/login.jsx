@@ -31,6 +31,7 @@ function Login(){
         }
 
         setErrors(errors);
+
         if (valid) {
             const { user, error } = await supabase.auth.signIn({
                 email: email,
