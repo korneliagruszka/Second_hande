@@ -32,6 +32,8 @@ function Login(){
 
         setErrors(errors);
 
+        console.log('Metoda signIn jest dostępna po aktualizacji:', supabase.auth.signIn);
+
         if (valid) {
             const { user, error } = await supabase.auth.signIn({
                 email: email,
@@ -83,7 +85,9 @@ function Login(){
               <div className="form_buttons">
               <Link to="/register">
                 <button type="button" className="register_button">Załóż konto</button></Link>
-                <button type="submit" className="login_button">Zaloguj się</button>
+                {/* <Link to="/dashboard"> */}
+                    <button type="submit" className="login_button">Zaloguj się</button>
+                    {/* </Link> */}
               </div>
             </form>
         </div>
