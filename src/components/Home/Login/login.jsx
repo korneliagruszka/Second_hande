@@ -1,7 +1,6 @@
 import "../Login/login.scss";
 import secondImage from "../../../assets/Decoration.png";
 import { useState } from 'react';
-import { Link } from "react-router-dom";
 import supabase from '../../../supabaseClient';
 import { useNavigate } from 'react-router-dom';
 
@@ -32,10 +31,10 @@ function Login(){
 
         setErrors(errors);
 
-        console.log('Metoda signIn jest dostępna po aktualizacji:', supabase.auth.signIn);
+        console.log("Logowanie z email:", email, "i hasłem:", password);
 
         if (valid) {
-            const { user, error } = await supabase.auth.signIn({
+            const { user, error } = await supabase.auth.signInWithPassword({
                 email: email,
                 password: password
             });
@@ -83,11 +82,8 @@ function Login(){
                 </div>
             
               <div className="form_buttons">
-              <Link to="/register">
-                <button type="button" className="register_button">Załóż konto</button></Link>
-                {/* <Link to="/dashboard"> */}
-                    <button type="submit" className="login_button">Zaloguj się</button>
-                    {/* </Link> */}
+                <button type="button" className="register_button" onClick={() => navigate('/register')}>Załóż konto</button>
+                <button type="submit" className="login_button">Zaloguj się</button>
               </div>
             </form>
         </div>
