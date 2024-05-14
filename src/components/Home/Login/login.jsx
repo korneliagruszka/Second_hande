@@ -44,7 +44,9 @@ function Login(){
                 setErrors(prevErrors => ({ ...prevErrors, form: 'Błąd logowania: ' + error.message }));
             } else if (user) {
                 console.log('Zalogowano jako:', user.email);
-                navigate('/dashboard');
+                console.log('Próba nawigacji do /dashboard');
+                navigate('/dashboard', { replace: true });
+                console.log('Nawigacja powinna być zakończona');
             }
         }
     };
