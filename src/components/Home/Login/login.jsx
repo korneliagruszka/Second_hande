@@ -44,7 +44,7 @@ function Login(){
                 setErrors(prevErrors => ({ ...prevErrors, form: 'Błąd logowania: ' + error.message }));
             } else if (user) {
                 console.log('Zalogowano jako:', user.email);
-                //poniższe logi już nie działają, dowiedzieć się dlaczego tak jest
+                //poniższe logi już nie działają, dowiedzieć się dlaczego tak jest (sprawdzić tutorial obsługi Supabase)
                 console.log('Próba nawigacji do /dashboard');
                 navigate('/dashboard', { replace: true });
                 console.log('Nawigacja powinna być zakończona');
