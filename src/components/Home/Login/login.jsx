@@ -1,6 +1,6 @@
 import "../Login/login.scss";
 import secondImage from "../../../assets/Decoration.png";
-import { useState } from 'react';
+import { useState ,useEffect } from 'react';
 import supabase from '../../../supabaseClient';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,6 +8,7 @@ function Login(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({ email: '', password: '' });
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
 
     const validateEmail = (email) => {
@@ -31,10 +32,8 @@ function Login(){
 
         setErrors(errors);
 
-        console.log("Logowanie z email:", email, "i hasłem:", password);
-
         if (valid) {
-            const { user, error } = await supabase.auth.signInWithPassword({
+            const { data, error } = await supabase.auth.signInWithPassword({
                 email: email,
                 password: password
             });
@@ -42,16 +41,18 @@ function Login(){
             if (error) {
                 console.error('Błąd logowania:', error.message);
                 setErrors(prevErrors => ({ ...prevErrors, form: 'Błąd logowania: ' + error.message }));
-            } else if (user) {
-                console.log('Zalogowano jako:', user.email);
-                //poniższe logi już nie działają, dowiedzieć się dlaczego tak jest (sprawdzić tutorial obsługi Supabase)
-                
-                console.log('Próba nawigacji do /dashboard');
-                navigate('/dashboard', { replace: true });
-                console.log('Nawigacja powinna być zakończona');
+            } else if (data.user) {
+                console.log('Zalogowano jako:', data.user.email);
+                setIsLoggedIn(true);
             }
         }
     };
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate('/dashboard', { replace: true });
+        }
+    }, [isLoggedIn, navigate]);
 
     return (
         <div className="login">
