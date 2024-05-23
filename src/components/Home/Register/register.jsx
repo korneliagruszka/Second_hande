@@ -51,7 +51,6 @@ function Register(){
                 setErrors(prevErrors => ({ ...prevErrors, form: 'Błąd rejestracji: ' + error.message }));
             } else {
                 console.log('Rejestracja pomyślna, użytkownik:', user);
-                // Tutaj przekierowanie użytkownika do login
             }
         }
         
