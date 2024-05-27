@@ -13,7 +13,6 @@ function Dashboard() {
         <h2>Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM</h2>
         <img src={secondImage} alt="Decoration image" className="banner_decoration_image"/>
         <p>Wystarczą 4 proste kroki:</p>
-        
         <div className="four_steps">
         <div className="first_step">
           <h3>1</h3>
@@ -34,6 +33,10 @@ function Dashboard() {
         </div>
       </div>
     </div>
+    <div className="rectangle">
+        <h4>Ważne!</h4>
+        <p>Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.</p>
+      </div>
     <Form />
     <Contact />
     </>
