@@ -2,16 +2,17 @@
 
 .form {
     width: 1585px;
-    height: 100px;
+    height: 883px;
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin-left: -8px;
+    background-image: url(src/assets/component_2.png);
+    background-position: right;
   
-    h2 {
-      font-size: 38px;
-      color: $color-text-dark-grey;
-      font-weight: 400;
+    h4 {
+      font: normal normal 600 36px/45px Open Sans;
+      color: $color-black;
     }
   }
