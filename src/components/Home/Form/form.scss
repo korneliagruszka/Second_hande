@@ -1,18 +1,66 @@
 @import "src/styles/settings/colors.scss";
 
 .form {
-    width: 1585px;
+    width: calc(1585px - 150px);
     height: 883px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    padding-left: 150px;
     margin-left: -8px;
     background-image: url(src/assets/component_2.png);
     background-position: right;
+
+    p {
+      font: normal normal 300 24px/27px Open Sans;
+      color: $color-text-dark-grey;
+      margin-top: 36px;
+    }
+
+    h4, label {
+      color: $color-black;
+    }
   
     h4 {
       font: normal normal 600 36px/45px Open Sans;
-      color: $color-black;
+      margin-bottom: 10px;
     }
+
+    label {
+      font: normal normal 300 24px/32px Open Sans;
+      display: flex;
+      align-items: center;
+      margin-top: 10px; 
+    }
+
+    input {
+      
+      margin-right: 10px;
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      width: 40px;
+      height: 40px;
+      border: 1px solid $color-text-dark-grey;
+      margin-right: 10px;
+      position: relative;
+      cursor: pointer;
+      background-color: transparent;
+
+      &:checked {
+          background-color: $color-yellow;
+          border-color: $color-text-dark-grey;
+      }
+  }
+
+    button {
+      margin-top: 158px; 
+      width: 180px;
+      height: 79px;
+      font: normal normal 300 24px/32px Open Sans;
+      background-color: transparent;
+      border: 0.75px solid $color-text-dark-grey;
+  }
   }
