@@ -13,54 +13,68 @@
     background-position: right;
 
     p {
-      font: normal normal 300 24px/27px Open Sans;
-      color: $color-text-dark-grey;
-      margin-top: 36px;
+        font: normal normal 300 24px/27px Open Sans;
+        color: $color-text-dark-grey;
+        margin-top: 36px;
     }
 
     h4, label {
-      color: $color-black;
+        color: $color-black;
     }
-  
+
     h4 {
-      font: normal normal 600 36px/45px Open Sans;
-      margin-bottom: 10px;
+        font: normal normal 600 36px/45px Open Sans;
+        margin-bottom: 10px;
     }
 
     label {
-      font: normal normal 300 24px/32px Open Sans;
-      display: flex;
-      align-items: center;
-      margin-top: 10px; 
+        font: normal normal 300 24px/32px Open Sans;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
     }
 
     input {
-      
-      margin-right: 10px;
+        margin-right: 10px;
     }
 
     input[type="checkbox"] {
-      appearance: none;
-      width: 40px;
-      height: 40px;
-      border: 1px solid $color-text-dark-grey;
-      margin-right: 10px;
-      position: relative;
-      cursor: pointer;
-      background-color: transparent;
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        border: 1px solid $color-text-dark-grey;
+        margin-right: 10px;
+        position: relative;
+        cursor: pointer;
+        background-color: transparent;
 
-      &:checked {
-          background-color: $color-yellow;
-          border-color: $color-text-dark-grey;
-      }
-  }
+        &:checked {
+            background-color: $color-yellow;
+            border-color: $color-text-dark-grey;
+        }
+    }
 
     button {
-      margin-top: 158px; 
-      width: 180px;
-      height: 79px;
+        margin-top: 158px;
+        width: 180px;
+        height: 79px;
+        font: normal normal 300 24px/32px Open Sans;
+        background-color: transparent;
+        border: 0.75px solid $color-text-dark-grey;
+        cursor: pointer;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+
+        button {
+            margin-top: 20px;
+        }
+    }
+
+    .selector {
       font: normal normal 300 24px/32px Open Sans;
-      background-color: transparent;
-      border: 0.75px solid $color-text-dark-grey;
-  }
-  }
+      color: $color-black;
+    }
+}
