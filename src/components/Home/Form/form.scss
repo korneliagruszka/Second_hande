@@ -77,14 +77,16 @@
     .selector {
       font: normal normal 300 24px/32px Open Sans;
       color: $color-black;
+      display: flex;
+      align-items: center;
     }
 
-    select {
+    .select_custom {
         background-color: transparent;
         margin-left: 15px;
         width: 300px;
         text-align: center;
         font: normal normal 300 24px/33px Open Sans;
+        color: $color-black;
     }
 }
-

@@ -55,8 +55,8 @@ function Form() {
                 <>
                     <h4>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h4>
                     <p className="selector">Liczba 60l worków:
-                    <select>
-                        <option value="" disabled selected>- wybierz -</option>
+                    <select className="select_custom">
+                        <option value="" disabled selected hidden>- wybierz -</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
