@@ -70,6 +70,41 @@ function Form() {
                     </div>
                 </>
             )}
+            {step === 3 && (
+                <>
+                    <h4>Lokalizacja:</h4>
+                    <select className="location_custom">
+                        <option value="" disabled selected hidden>- wybierz -</option>
+                        <option value="1">Poznań</option>
+                        <option value="2">Warszawa</option>
+                        <option value="3">Kraków</option>
+                        <option value="4">Wrocław</option>
+                        <option value="5">Katowice</option>
+                    </select>
+                    <p>Komu chcesz pomóc?</p>
+                    <div className="checkbox_container">
+                        <label className="step3_checkbox">
+                            <input type="checkbox" value="dzieciom" data-text="Dzieciom" />
+                        </label>
+                        <label className="step3_checkbox">
+                            <input type="checkbox" value="samotnymMatkom" data-text="Samotnym matkom" />
+                        </label>
+                        <label className="step3_checkbox">
+                            <input type="checkbox" value="bezdomnym" data-text="Bezdomnym" />
+                        </label>
+                        <label className="step3_checkbox">
+                            <input type="checkbox" value="niepelnosprawnym" data-text="Niepełnosprawnym" />
+                        </label>
+                        <label className="step3_checkbox">
+                            <input type="checkbox" value="osobomStarszym" data-text="Osobom starszym" />
+                        </label>
+                    </div>
+                    <div className="buttons">
+                        <button onClick={handleBack}>Wstecz</button>
+                        <button onClick={handleNext}>Dalej</button>
+                    </div>
+                </>
+            )}
         </div>
     );
 }
