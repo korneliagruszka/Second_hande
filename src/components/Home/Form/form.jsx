@@ -99,7 +99,9 @@ function Form() {
                             <input type="checkbox" value="osobomStarszym" data-text="Osobom starszym" />
                         </label>
                     </div>
-                    <div className="buttons">
+                    <h5>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h5>
+                    <input className="organization_input" type="text" id="organization" name="organization"/>
+                    <div className="step3_buttons">
                         <button onClick={handleBack}>Wstecz</button>
                         <button onClick={handleNext}>Dalej</button>
                     </div>
