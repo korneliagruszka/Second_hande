@@ -107,6 +107,44 @@ function Form() {
                     </div>
                 </>
             )}
+            {step === 4 && (
+                <>
+                <div className="adres_container">
+                    <div className="adres_section">
+                    <h5>Adres odbioru:
+                        <p>Ulica
+                        <input className="adres_input" type="text" id="adres" name="adres"/>
+                        </p>
+                        <p>Miasto
+                        <input className="adres_input" type="text" id="adres" name="adres"/>
+                        </p>
+                        <p>Kod pocztowy
+                        <input className="adres_input" type="text" id="adres" name="adres"/>
+                        </p>
+                        <p>Numer telefonu
+                        <input className="adres_input" type="text" id="adres" name="adres"/>
+                        </p>
+                    </h5></div>
+                    <div className="date_section">
+                    <h5>Termin odbioru:
+                        <p>Data
+                        <input className="date_input" type="text" id="date" name="date"/>
+                        </p>
+                        <p>Godzina
+                        <input className="date_input" type="text" id="date" name="date"/>
+                        </p>
+                        <p>Uwagi dla kuriera
+                        <input className="date_input" type="text" id="date" name="date"/>
+                        </p>
+                    </h5>
+                    </div>
+                    </div>
+                    <div className="step4_buttons">
+                        <button onClick={handleBack}>Wstecz</button>
+                        <button onClick={handleNext}>Dalej</button>
+                    </div>
+                </>
+            )}
         </div>
     );
 }
