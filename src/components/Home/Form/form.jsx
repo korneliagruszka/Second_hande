@@ -111,7 +111,7 @@ function Form() {
                 <>
                 <div className="adres_container">
                     <div className="adres_section">
-                    <h5>Adres odbioru:
+                    <h5>Adres odbioru:</h5>
                         <p>Ulica
                         <input className="adres_input" type="text" id="adres" name="adres"/>
                         </p>
@@ -124,9 +124,9 @@ function Form() {
                         <p>Numer telefonu
                         <input className="adres_input" type="text" id="adres" name="adres"/>
                         </p>
-                    </h5></div>
+                    </div>
                     <div className="date_section">
-                    <h5>Termin odbioru:
+                    <h5>Termin odbioru:</h5>
                         <p>Data
                         <input className="date_input" type="text" id="date" name="date"/>
                         </p>
@@ -136,7 +136,6 @@ function Form() {
                         <p>Uwagi dla kuriera
                         <input className="date_input" type="text" id="date" name="date"/>
                         </p>
-                    </h5>
                     </div>
                     </div>
                     <div className="step4_buttons">
