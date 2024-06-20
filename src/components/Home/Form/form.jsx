@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./form.scss";
+import icon1Image from "../../../assets/Icon_1.png";
+import icon4Image from "../../../assets/Icon_4.png";
 
 function Form() {
     const [step, setStep] = useState(1);
 
-    // Dodano stan dla przechowywania danych formularza
+    //stan dla przechowywania danych formularza
     const [formData, setFormData] = useState({
         items: [],
         bags: "",
@@ -32,7 +34,7 @@ function Form() {
         setStep(step - 1);
     };
 
-    // Dodano funkcję do obsługi zmian w formularzu
+    //funkcja do obsługi zmian w formularzu
     const handleChange = (e) => {
         const { name, value, checked, type } = e.target;
         if (type === "checkbox") {
@@ -55,7 +57,7 @@ function Form() {
         }
     };
 
-    // Dodano funkcje do obsługi zmian adresu
+    //funkcja do obsługi zmian adresu
     const handleAddressChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -67,7 +69,7 @@ function Form() {
         }));
     };
 
-    // Dodano funkcje do obsługi zmian terminu odbioru
+    //funkcja do obsługi zmian terminu odbioru
     const handlePickupChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -81,37 +83,41 @@ function Form() {
 
     return (
         <div className="form" id="form">
-            <p>Krok {step}/4</p>
+            {step < 5 ? (
+                <p>Krok {step}/4</p>
+            ) : (
+                <h2>Podsumowanie Twojej darowizny</h2>
+            )}
             {step === 1 && (
                 <>
                     <h4>Zaznacz co chcesz oddać:</h4>
                     <div>
                         <label>
-                            <input type="checkbox" name="items" value="ubrania_ponowne_użycie" />
+                            <input type="checkbox" name="items" value="ubrania w dobrym stanie" onChange={handleChange}/>
                             ubrania, które nadają się do ponownego użycia
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input type="checkbox" name="items" value="ubrania_do_wyrzucenia" />
+                            <input type="checkbox" name="items" value="ubrania do wyrzucenia" onChange={handleChange}/>
                             ubrania, do wyrzucenia
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input type="checkbox" name="items" value="zabawki" />
+                            <input type="checkbox" name="items" value="zabawki" onChange={handleChange}/>
                             zabawki
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input type="checkbox" name="items" value="ksiazki" />
+                            <input type="checkbox" name="items" value="książki" onChange={handleChange}/>
                             książki
                         </label>
                     </div>
                     <div>
                         <label>
-                            <input type="checkbox" name="items" value="inne" />
+                            <input type="checkbox" name="items" value="inne" onChange={handleChange}/>
                             Inne
                         </label>
                     </div>
@@ -122,7 +128,7 @@ function Form() {
                 <>
                     <h4>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h4>
                     <p className="selector">Liczba 60l worków:
-                    <select className="select_custom">
+                    <select className="select_custom" name="bags" onChange={handleChange}>
                         <option value="" disabled selected hidden>- wybierz -</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -140,34 +146,34 @@ function Form() {
             {step === 3 && (
                 <>
                     <h4>Lokalizacja:</h4>
-                    <select className="location_custom">
+                    <select className="location_custom" name="location" onChange={handleChange}>
                         <option value="" disabled selected hidden>- wybierz -</option>
-                        <option value="1">Poznań</option>
-                        <option value="2">Warszawa</option>
-                        <option value="3">Kraków</option>
-                        <option value="4">Wrocław</option>
-                        <option value="5">Katowice</option>
+                        <option value="Poznań">Poznań</option>
+                        <option value="Warszawa">Warszawa</option>
+                        <option value="Kraków">Kraków</option>
+                        <option value="Wrosław">Wrocław</option>
+                        <option value="Katowice">Katowice</option>
                     </select>
                     <p>Komu chcesz pomóc?</p>
                     <div className="checkbox_container">
                         <label className="step3_checkbox">
-                            <input type="checkbox" value="dzieciom" data-text="Dzieciom" />
+                            <input type="checkbox" name="beneficiaries" value="dzieciom" data-text="Dzieciom" onChange={handleChange}/>
                         </label>
                         <label className="step3_checkbox">
-                            <input type="checkbox" value="samotnymMatkom" data-text="Samotnym matkom" />
+                            <input type="checkbox" name="beneficiaries" value="samotnymMatkom" data-text="Samotnym matkom" onChange={handleChange}/>
                         </label>
                         <label className="step3_checkbox">
-                            <input type="checkbox" value="bezdomnym" data-text="Bezdomnym" />
+                            <input type="checkbox" name="beneficiaries" value="bezdomnym" data-text="Bezdomnym" onChange={handleChange}/>
                         </label>
                         <label className="step3_checkbox">
-                            <input type="checkbox" value="niepelnosprawnym" data-text="Niepełnosprawnym" />
+                            <input type="checkbox" name="beneficiaries" value="niepelnosprawnym" data-text="Niepełnosprawnym" onChange={handleChange}/>
                         </label>
                         <label className="step3_checkbox">
-                            <input type="checkbox" value="osobomStarszym" data-text="Osobom starszym" />
+                            <input type="checkbox" name="beneficiaries" value="osobomStarszym" data-text="Osobom starszym" onChange={handleChange}/>
                         </label>
                     </div>
                     <h5>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h5>
-                    <input className="organization_input" type="text" id="organization" name="organization"/>
+                    <input className="organization_input" type="text" id="organization" name="organization" onChange={handleChange}/>
                     <div className="step3_buttons">
                         <button onClick={handleBack}>Wstecz</button>
                         <button onClick={handleNext}>Dalej</button>
@@ -180,28 +186,28 @@ function Form() {
                     <div className="adres_section">
                     <h5>Adres odbioru:</h5>
                         <p>Ulica
-                        <input className="adres_input" type="text" id="adres" name="adres"/>
+                        <input className="adres_input" type="text" id="street" name="street" onChange={handleAddressChange}/>
                         </p>
                         <p>Miasto
-                        <input className="adres_input" type="text" id="adres" name="adres"/>
+                        <input className="adres_input" type="text" id="city" name="city" onChange={handleAddressChange}/>
                         </p>
                         <p>Kod pocztowy
-                        <input className="adres_input" type="text" id="adres" name="adres"/>
+                        <input className="adres_input" type="text" id="postalCode" name="postalCode" onChange={handleAddressChange}/>
                         </p>
                         <p>Numer telefonu
-                        <input className="adres_input" type="text" id="adres" name="adres"/>
+                        <input className="adres_input" type="text" id="phone" name="phone" onChange={handleAddressChange}/>
                         </p>
                     </div>
                     <div className="date_section">
                     <h5>Termin odbioru:</h5>
                         <p>Data
-                        <input className="date_input" type="text" id="date" name="date"/>
+                        <input className="date_input" type="text" id="date" name="date" onChange={handlePickupChange}/>
                         </p>
                         <p>Godzina
-                        <input className="date_input" type="text" id="date" name="date"/>
+                        <input className="date_input" type="text" id="time" name="time" onChange={handlePickupChange}/>
                         </p>
                         <p>Uwagi dla kuriera
-                        <input className="date_input" type="text" id="date" name="date"/>
+                        <input className="date_input" type="text" id="notes" name="notes" onChange={handlePickupChange}/>
                         </p>
                     </div>
                     </div>
@@ -211,19 +217,19 @@ function Form() {
                     </div>
                 </>
             )}
-            {step === 5 && ( /* Dodano krok 5 */
+            {step === 5 && ( 
                 <>
-                    <h2>Podsumowanie Twojej darowizny:</h2> {/* Dodano podsumowanie */}
                     <div className="summary">
-                        <div className="summary-item">
-                            <img src="path/to/clothes-icon.png" alt="Ubrania ikona" />
-                            <p className="summary-text">{formData.bags} worki, {formData.items.join(", ")}, {formData.beneficiaries.join(", ")}</p>
+                        <div className="summary_item">
+                            <p>Oddajesz:</p>
+                            <img src={icon1Image} alt="icon1" className="icon1" />
+                            <p className="summary_text">{formData.bags} worki, {formData.items.join(", ")}, {formData.beneficiaries.join(", ")}</p>
                         </div>
                         <div className="location">
-                            <img src="path/to/arrow-icon.png" alt="Strzałki ikona" />
+                            <img src={icon4Image} alt="icon4" className="icon4" />
                             <p>dla lokalizacji: {formData.location}</p>
                         </div>
-                        <div className="pickup-info">
+                        <div className="pickup_info">
                             <div>
                                 <h5>Adres odbioru:</h5>
                                 <p>{formData.address.street}</p>
@@ -241,7 +247,7 @@ function Form() {
                     </div>
                     <div className="buttons">
                         <button onClick={handleBack}>Wstecz</button>
-                        <button>Potwierdzam</button> {/* Przycisk do potwierdzenia */}
+                        <button>Potwierdzam</button>
                     </div>
                 </>
             )}

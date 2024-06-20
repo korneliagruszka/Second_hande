@@ -203,7 +203,23 @@
         font: normal normal 600 24px/45px Open Sans;
         color: $color-black;
         margin-left: -259px;
-        
     }
-}
 
+    h2 {
+        font: normal normal 600 36px/45px Open Sans;
+        color: $color-black;
+    } 
+
+    .summary p{
+        font: normal normal 600 24px/45px Open Sans;
+        color: $color-black;
+        margin-left: -155px;
+    }
+
+    .icon1, .icon4 {
+        width: 50px;
+        height: 50px;
+        margin-left: -5px;
+    }
+
+}
