@@ -86,7 +86,7 @@ function Form() {
             {step < 5 ? (
                 <p>Krok {step}/4</p>
             ) : (
-                <h2>Podsumowanie Twojej darowizny</h2>
+                <h2 className="summary_title">Podsumowanie Twojej darowizny</h2>
             )}
             {step === 1 && (
                 <>
@@ -151,25 +151,25 @@ function Form() {
                         <option value="Poznań">Poznań</option>
                         <option value="Warszawa">Warszawa</option>
                         <option value="Kraków">Kraków</option>
-                        <option value="Wrosław">Wrocław</option>
+                        <option value="Wrocław">Wrocław</option>
                         <option value="Katowice">Katowice</option>
                     </select>
                     <p>Komu chcesz pomóc?</p>
                     <div className="checkbox_container">
                         <label className="step3_checkbox">
-                            <input type="checkbox" name="beneficiaries" value="dzieciom" data-text="Dzieciom" onChange={handleChange}/>
+                            <input type="checkbox" name="beneficiaries" value="Dzieciom" data-text="Dzieciom" onChange={handleChange}/>
                         </label>
                         <label className="step3_checkbox">
-                            <input type="checkbox" name="beneficiaries" value="samotnymMatkom" data-text="Samotnym matkom" onChange={handleChange}/>
+                            <input type="checkbox" name="beneficiaries" value="Samotnym Matkom" data-text="Samotnym matkom" onChange={handleChange}/>
                         </label>
                         <label className="step3_checkbox">
-                            <input type="checkbox" name="beneficiaries" value="bezdomnym" data-text="Bezdomnym" onChange={handleChange}/>
+                            <input type="checkbox" name="beneficiaries" value="Bezdomnym" data-text="Bezdomnym" onChange={handleChange}/>
                         </label>
                         <label className="step3_checkbox">
-                            <input type="checkbox" name="beneficiaries" value="niepelnosprawnym" data-text="Niepełnosprawnym" onChange={handleChange}/>
+                            <input type="checkbox" name="beneficiaries" value="Niepełnosprawnym" data-text="Niepełnosprawnym" onChange={handleChange}/>
                         </label>
                         <label className="step3_checkbox">
-                            <input type="checkbox" name="beneficiaries" value="osobomStarszym" data-text="Osobom starszym" onChange={handleChange}/>
+                            <input type="checkbox" name="beneficiaries" value="Osobom Starszym" data-text="Osobom starszym" onChange={handleChange}/>
                         </label>
                     </div>
                     <h5>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h5>
@@ -220,14 +220,14 @@ function Form() {
             {step === 5 && ( 
                 <>
                     <div className="summary">
+                            <h5>Oddajesz:</h5>
                         <div className="summary_item">
-                            <p>Oddajesz:</p>
                             <img src={icon1Image} alt="icon1" className="icon1" />
                             <p className="summary_text">{formData.bags} worki, {formData.items.join(", ")}, {formData.beneficiaries.join(", ")}</p>
                         </div>
                         <div className="location">
                             <img src={icon4Image} alt="icon4" className="icon4" />
-                            <p>dla lokalizacji: {formData.location}</p>
+                            <h6>dla lokalizacji: {formData.location}</h6>
                         </div>
                         <div className="pickup_info">
                             <div>
@@ -245,7 +245,7 @@ function Form() {
                             </div>
                         </div>
                     </div>
-                    <div className="buttons">
+                    <div className="summary_buttons">
                         <button onClick={handleBack}>Wstecz</button>
                         <button>Potwierdzam</button>
                     </div>
@@ -256,4 +256,3 @@ function Form() {
 }
 
 export default Form;
-
