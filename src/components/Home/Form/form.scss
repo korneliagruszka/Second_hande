@@ -223,10 +223,10 @@
         color: $color-black;
     }
 
-    .summary h5 {
+    .info_title {
         font: normal normal 600 24px/45px Open Sans;
         color: $color-black;
-        margin-left: -268px;
+        margin-left: -360px;
         margin-top: -10px;
     }
 
@@ -240,6 +240,12 @@
         margin-left: -5px;
     }
 
+    .summary_subtitle {
+        margin-left: -296px;
+        margin-top: -10px;
+        font: normal normal 600 24px/45px Open Sans
+    }
+
     .summary_text {
         font: normal normal normal 24px/45px Open Sans;
         color: $color-black;
@@ -250,10 +256,17 @@
         justify-content: space-between;
         width: 120%;
         margin-left: 222px;
+
+        p {
+            margin-left: -217px;
+            text-align: left;
+            margin-top: 0;
+            font: normal normal 300 24px/32px Open Sans;
+        }
     }
 
     .summary_buttons {
-        margin-top: 338px;
+        margin-top: 178px;
         text-align: center;
         margin-left: -10px;
 
@@ -261,5 +274,21 @@
             margin: 0 10px;
             padding: 10px 20px;
         }
+    }
+
+    .final_text {
+        width: 655px;
+        margin-top: 300px;
+    }
+
+    .final_text p {
+        font: normal normal 300 40px/55px Open Sans;
+        color: $color-black;
+        text-align: center;
+    }
+
+    .final_decoration_image {
+        margin-left: 196px;
+        margin-top: 15px;
     }
 }

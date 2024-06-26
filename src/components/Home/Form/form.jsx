@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./form.scss";
 import icon1Image from "../../../assets/Icon_1.png";
 import icon4Image from "../../../assets/Icon_4.png";
+import secondImage from"../../../assets/Decoration.png";
 
 function Form() {
     const [step, setStep] = useState(1);
@@ -27,11 +28,19 @@ function Form() {
     });
 
     const handleNext = () => {
-        setStep(step + 1);
+        // setStep(step + 1);
+        if (step === 5) {
+            setStep(6);
+        } else {
+            setStep(step + 1);
+        }
     };
 
     const handleBack = () => {
-        setStep(step - 1);
+        // setStep(step - 1);
+        if (step > 1) { 
+            setStep(step - 1);
+        }
     };
 
     //funkcja do obsługi zmian w formularzu
@@ -83,10 +92,14 @@ function Form() {
 
     return (
         <div className="form" id="form">
+            {step < 6 && (
+                <div className="form_header">
             {step < 5 ? (
                 <p>Krok {step}/4</p>
             ) : (
                 <h2 className="summary_title">Podsumowanie Twojej darowizny</h2>
+                )}
+                </div>
             )}
             {step === 1 && (
                 <>
@@ -220,7 +233,7 @@ function Form() {
             {step === 5 && ( 
                 <>
                     <div className="summary">
-                            <h5>Oddajesz:</h5>
+                            <h5 className="summary_subtitle">Oddajesz:</h5>
                         <div className="summary_item">
                             <img src={icon1Image} alt="icon1" className="icon1" />
                             <p className="summary_text">{formData.bags} worki, {formData.items.join(", ")}, {formData.beneficiaries.join(", ")}</p>
@@ -231,26 +244,32 @@ function Form() {
                         </div>
                         <div className="pickup_info">
                             <div>
-                                <h5>Adres odbioru:</h5>
-                                <p>{formData.address.street}</p>
-                                <p>{formData.address.city}</p>
-                                <p>{formData.address.postalCode}</p>
-                                <p>{formData.address.phone}</p>
+                                <h5 className="info_title">Adres odbioru:</h5>
+                                <p>Ulica {formData.address.street}</p>
+                                <p>Miasto {formData.address.city}</p>
+                                <p>Kod pocztowy {formData.address.postalCode}</p>
+                                <p>Numer telefonu {formData.address.phone}</p>
                             </div>
                             <div>
-                                <h5>Termin odbioru:</h5>
-                                <p>{formData.pickup.date}</p>
-                                <p>{formData.pickup.time}</p>
-                                <p>{formData.pickup.notes}</p>
+                                <h5 className="info_title">Termin odbioru:</h5>
+                                <p>Data {formData.pickup.date}</p>
+                                <p>Godzina {formData.pickup.time}</p>
+                                <p>Uwagi dla kuriera {formData.pickup.notes}</p>
                             </div>
                         </div>
                     </div>
                     <div className="summary_buttons">
                         <button onClick={handleBack}>Wstecz</button>
-                        <button>Potwierdzam</button>
+                        <button onClick={handleNext}>Potwierdzam</button>
                     </div>
                 </>
             )}
+            {step === 6 && (   
+                <div className="final_text">
+                    <p>Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie informacje o odbiorze.</p> 
+                    <img src={secondImage} alt="Decoration image" className="final_decoration_image"/>
+                </div>  
+            )}  
         </div>
     );
 }
