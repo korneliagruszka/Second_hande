@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 import "./form.scss";
 import icon1Image from "../../../assets/Icon_1.png";
 import icon4Image from "../../../assets/Icon_4.png";
 import secondImage from"../../../assets/Decoration.png";
 
-function Form() {
+function Form({ setHideRectangle }) {
     const [step, setStep] = useState(1);
+
+    //kontrolowanie widoczności rectangle
+    useEffect(() => {
+        if (step >= 5) {
+            setHideRectangle(true);
+        } else {
+            setHideRectangle(false);
+        }
+    }, [step, setHideRectangle]);
+    
 
     //stan dla przechowywania danych formularza
     const [formData, setFormData] = useState({
@@ -274,6 +285,8 @@ function Form() {
     );
 }
 
-
+Form.propTypes = {
+    setHideRectangle: PropTypes.func.isRequired
+};
 
 export default Form;
