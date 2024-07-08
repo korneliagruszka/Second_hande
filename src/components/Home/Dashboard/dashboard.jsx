@@ -3,8 +3,12 @@ import Contact from "../../common/Contact/contact";
 import Form from "../../Home/Form/form";
 import bannerImage from "../../../assets/component.png";
 import secondImage from"../../../assets/Decoration.png";
+import { useState } from "react";
 
 function Dashboard() {
+
+  const [hideRectangle, setHideRectangle] = useState(false);
+
   return (
     <>
     <div className="dashboard" id="dashboard">
@@ -33,11 +37,13 @@ function Dashboard() {
         </div>
       </div>
     </div>
-    <div className="rectangle">
+      {!hideRectangle && (
+      <div className="rectangle">
         <h4>Ważne!</h4>
         <p>Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.</p>
       </div>
-    <Form />
+      )}
+    <Form setHideRectangle={setHideRectangle}/>
     <Contact />
     </>
   );
