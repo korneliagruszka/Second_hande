@@ -5,7 +5,7 @@
 * [Preview](#preview)
 * [Technologies](#technologies)
 * [Project status](#project-status)
-* [Sources] (#sources)
+* [Sources](#sources)
 
 ## General info
 An application that allows you to get rid of unnecessary things and give them a new life. Coders Lab project.
