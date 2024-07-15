@@ -5,6 +5,7 @@
 * [Preview](#preview)
 * [Technologies](#technologies)
 * [Project status](#project-status)
+* [Sources] (#sources)
 
 ## General info
 An application that allows you to get rid of unnecessary things and give them a new life. Coders Lab project.
@@ -30,3 +31,7 @@ An application that allows you to get rid of unnecessary things and give them a 
 * Supabase
 
 ## Project status
+The project is a ready-made application.
+
+## Sources
+The application is created based on the Coders Lab project.
