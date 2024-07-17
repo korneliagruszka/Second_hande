@@ -8,7 +8,8 @@
 * [Sources](#sources)
 
 ## General info
-An application that allows you to get rid of unnecessary things and give them a new life. Coders Lab project.
+An application that allows you to get rid of unnecessary things and give them a new life. Coders Lab project. 
+Link to the app: https://6697f9b6a5669cfeb112e8de--second-hande.netlify.app/
 
 ## Preview
 ### Main page - Home
