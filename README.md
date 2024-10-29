@@ -10,7 +10,7 @@
 ## General info
 An application that allows you to get rid of unnecessary things and give them a new life. 
 
-Link to the app: https://6697f9b6a5669cfeb112e8de--second-hande.netlify.app/.
+Link to the app: https://second-hande.netlify.app.
 
 ## Preview
 ### Main page - Home
