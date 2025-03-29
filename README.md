@@ -37,3 +37,6 @@ The project is a ready-made application.
 
 ## Sources
 The application is created based on the Coders Lab project.
+
+## Badges
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c3babbeb-1640-4aca-860b-c6896bf54d20/deploy-status)](https://app.netlify.com/sites/second-hande/deploys)
