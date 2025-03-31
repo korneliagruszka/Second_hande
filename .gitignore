@@ -12,9 +12,6 @@ dist
 dist-ssr
 *.local
 
-# Environment variables file
-src/env.js
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -25,3 +22,6 @@ src/env.js
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables file
+env.js
